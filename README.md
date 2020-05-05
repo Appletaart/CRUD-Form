@@ -16,12 +16,12 @@ id, first_name, last_name, email, phone, sex, date_in(for to use later)<br>
 - show all the information form the database<br>
 </p>
 <br>
-<img width="30%" src="jpg/add.png"><br>
-<img width="30%" src="jpg/edit.png"><br>
-<img width="30%" src="jpg/search.png"><br>
-<img width="30%" src="jpg/info.png"><br>
-<img width="30%" src="jpg/regis1.png"><br>
-<img width="30%" src="jpg/regis2.png"><br>
-<img width="30%" src="jpg/regis3.png"><br>
-<img width="30%" src="jpg/login.png"><br>
+<img src="jpg/add.png"><br>
+<img src="jpg/edit.png"><br>
+<img src="jpg/search.png"><br>
+<img src="jpg/info.png"><br>
+<img src="jpg/regis1.png"><br>
+<img src="jpg/regis2.png"><br>
+<img src="jpg/regis3.png"><br>
+<img src="jpg/login.png"><br>
 
