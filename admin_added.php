@@ -110,31 +110,24 @@ if(isset($_POST['submit'])) {
         } else {    /*error register ต้องแก้จุด*/
             echo
                 '<div class="card border-left-danger shadow w-100 h-20 py-2 mt-5 mx-auto">
-            <div class="col-12 mx-auto">
-            
-            <h4 class="text-gray-500 px-3 pt-3 pb-0">Error Occurred<br/></h4>
-
-            <a class="text-gray-500 px-3" href="registeradmin.php">Return back to fill in registor form</a>' . ' mysqli_error($dbc);
+                <div class="col-12 mx-auto">
+                <h4 class="text-gray-500 px-3 pt-3 pb-0">Error Occurred<br/></h4>
+                <a class="text-gray-500 px-3" href="registeradmin.php">Return back to fill in registor form</a>
+                ' . mysqli_error($dbc);
                 mysqli_stmt_close($stmt);
-                mysqli_close($dbc);
-
-            </div>
-            </div>';
+                mysqli_close($dbc);'
+                </div>
+                </div>';
         }
-    } else {  /*error need to fill in again ต้องแก้ต้องแก้*/
-        echo
-        '<div class="card border-left-danger shadow w-100 h-20 py-2 mt-5 mx-auto">
-            <div class="col-12 mx-auto">
-             <h4 class="text-gray-500 px-3 pt-3 pb-0">You need to enter the following data<br/></h4><br>
-             The info, you have forgot to filled in <br>';
+        } else {  /*error need to fill in again ต้องแก้ต้องแก้*/
+            echo
+                '<div class="card border-left-danger shadow w-100 h-20 py-2 mt-5 mx-auto">
+                <div class="col-12 mx-auto">
+                <h4 class="text-gray-500 px-3 pt-3 pb-0">You need to enter the following data<br/></h4><br>
+                <p class="text-gray-500 px-3">The info, you have forgot to filled in </p><br>';
 
-        foreach ($data_missing as $missing) {
-            echo '$missing . "<br>";
-                                    mysqli_stmt_close($stmt);
-                                    mysqli_close($dbc); ' . '
-
-            </div>
-            </div>';
+                foreach ($data_missing as $missing) {
+                    echo $missing . ' <br> '  ; mysqli_stmt_close($stmt); mysqli_close(); '</div></div>' ;
         }
     }
 }
@@ -149,48 +142,3 @@ if(isset($_POST['submit'])) {
     </div>
     </div>
 <?php include("includes/footer.php"); ?>
-
-
-
-
-
-
-<!--
-
-
-
-        if(isset($_POST['submit'])) {
-            $p_photo = $_FILES['profile_photo']; //name of input name
-            //file = array[name],[type],[tmp_name],[error],[size]
-            $fileName = $_FILES['profile_photo']['name'];
-            $fileTmpname = $_FILES['profile_photo']['tmp_name'];
-            $fileSize = $_FILES['profile_photo']['size'];
-            $fileError = $_FILES['profile_photo']['error'];
-            $fileType = $_FILES['profile_photo']['type'];
-
-            //file extension
-            $fileExt = explode('.', $fileName);
-            $fileActualExt = strtolower(end($fileExt)); //end line from array
-
-            $allowed = array('jpg', 'jpeg', 'png', 'gif'); //only this file type that allowed to upload
-            if (in_array($fileActualExt, $allowed)) { //in this case allow for the file extesion
-                if ($fileError === 0) {
-                    if ($fileSize < 1000000) { //how much size that allowed to upload
-                        $fileNameNew = "profile". $id . " . " . $fileActualExt;//make a new name
-                        $fileDestination = 'upload_p/' . $fileNameNew;
-                        move_uploaded_file($fileNameNew, $fileDestination); //move photo from tmp_file to real upload location
-
-                        //after this process we could go back to direct page with header function if we want to
-
-                    } else {
-                        echo "Your file is too big!";
-                    }
-                } else {
-                    echo "Error uploading";
-                }
-
-            } else {
-                echo "You could not upload this type of photo's file";
-            }
-        }
-    } }-->
